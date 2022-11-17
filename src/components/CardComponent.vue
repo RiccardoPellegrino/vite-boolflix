@@ -1,10 +1,10 @@
 <template>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card mt-5" style="width: 20rem;">
+        <img :src="imgPath + item.poster_path" class="card-img-top" :alt="item.title">
         <div class="card-body">
-            <h5 class="card-title">{{ item.original_title }}</h5>
-            <p class="card-text">{{ item.title }}</p>
-            <p>{{ item.vote_average }}</p>
+            <h5 class="card-title text-white">{{ item.original_title }}</h5>
+            <p class="card-text text-white">{{ item.title }}</p>
+            <p class="text-white">{{ item.vote_average }}</p>
             <div class="flag" v-if="flag.includes(item.original_language)">
                 <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
             </div>
@@ -23,13 +23,16 @@ export default {
         return {
             flag: [
                 'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr'
-            ]
+            ],
+            imgPath: 'https://image.tmdb.org/t/p/w342'
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
+
 .flag {
     width: 30px;
 
@@ -40,6 +43,9 @@ export default {
 }
 
 .card {
+    background-color: $bg-color;
     color: black;
+    margin-left: 50px;
+
 }
 </style>

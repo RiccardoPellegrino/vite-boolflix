@@ -4,7 +4,8 @@
   </header>
 
   <main>
-    <ListCardComponent :items="store.movie" />
+    <ListCardComponent title="Movies" :items="store.movie" />
+    <ListCardComponent title="TV Series" :items="store.tv" />
   </main>
 
 </template>
@@ -29,6 +30,7 @@ export default {
     'store.params.query'(newVal, oldVal) {
       if (newVal !== oldVal) {
         this.getMovie();
+        this.getSeries();
       }
       console.log('new valore ' + newVal)
       console.log('old valore ' + oldVal)
@@ -37,13 +39,37 @@ export default {
   },
   methods: {
     getMovie() {
-      const apiUrl = store.baseURL + store.endPoint;
+      const apiUrl = store.baseURL + store.endPointMovie;
       const params = store.params;
       axios.get(apiUrl, { params }).then((res) => {
         console.log(res.data.results);
         store.movie = res.data.results;
       })
-    }
+    },
+    getSeries() {
+      const apiUrl = store.baseURL + store.endPointTv;
+      const params = store.params;
+      axios.get(apiUrl, { params }).then((res) => {
+        console.log(res.data.results);
+        store.tv = res.data.results;
+      })
+    },
+    // getMoviePopular() {
+    //   const apiUrl = store.baseURL + store.endPointMovie;
+    //   const params = store.params;
+    //   axios.get(apiUrl, { params }).then((res) => {
+    //     console.log(res.data.results);
+    //     store.movie = res.data.results;
+    //   })
+    // },
+    // getSeriesTvPopular() {
+    //   const apiUrl = store.baseURL + store.endPointTv;
+    //   const params = store.params;
+    //   axios.get(apiUrl, { params }).then((res) => {
+    //     console.log(res.data.results);
+    //     store.tv = res.data.results;
+    //   })
+    // }
   },
   created() {
 
