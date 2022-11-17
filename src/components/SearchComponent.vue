@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { store } from '../store';
 export default {
     name: 'SearchComponent',
     data() {
@@ -21,11 +22,12 @@ export default {
     methods: {
         doSearch() {
             console.log(this.text)
+            store.params.query = this.text;
         }
     }
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>
