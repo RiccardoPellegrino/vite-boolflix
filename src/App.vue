@@ -4,7 +4,7 @@
   </header>
 
   <main>
-    <ListCardComponent />
+    <ListCardComponent :items="store.movie" />
   </main>
 
 </template>

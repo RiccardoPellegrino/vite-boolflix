@@ -15,6 +15,9 @@ import CardComponent from './CardComponent.vue';
 
 export default {
     name: "ListCardComponent",
+    props: {
+        items: Array
+    },
     data() {
         return {
 
