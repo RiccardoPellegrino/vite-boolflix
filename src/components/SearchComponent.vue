@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         doSearch() {
-            console.log(this.text)
+            console.log('do search ' + this.text)
             store.params.query = this.text;
         }
     }

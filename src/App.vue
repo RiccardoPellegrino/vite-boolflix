@@ -26,7 +26,14 @@ export default {
     };
   },
   watch: {
+    'store.params.query'(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.getMovie();
+      }
+      console.log('new valore ' + newVal)
+      console.log('old valore ' + oldVal)
 
+    }
   },
   methods: {
     getMovie() {
@@ -34,6 +41,7 @@ export default {
       const params = store.params;
       axios.get(apiUrl, { params }).then((res) => {
         console.log(res.data.results);
+        store.movie = res.data.results;
       })
     }
   },
