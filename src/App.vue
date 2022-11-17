@@ -4,7 +4,7 @@
   </header>
 
   <main>
-
+    Sezione Movie
   </main>
 
 </template>
@@ -13,7 +13,14 @@
 import HeaderComponent from './components/HeaderComponent.vue';
 
 export default {
-  components: { HeaderComponent }
+  data() {
+    return {
+
+    };
+  },
+  components: {
+    HeaderComponent
+  }
 }
 </script>
 
