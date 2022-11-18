@@ -1,5 +1,5 @@
 <template>
-    <header class="d-flex justify-content-between align-items-center mb-5">
+    <header class="d-flex justify-content-between align-items-center ">
         <a href="#"><img src="public\images\BOOLFLIX.png" alt=""></a>
         <div class="d-flex text-white">
             <a class="nav-link active fs-5 me-5" aria-current="page" href="#">Home</a>
@@ -35,7 +35,7 @@ a:hover {
 }
 
 img {
-    width: 120px;
+    width: 150px;
     margin-left: 15px;
 }
 </style>

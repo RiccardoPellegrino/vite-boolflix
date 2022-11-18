@@ -1,6 +1,6 @@
 <template>
     <div class="contenitore">
-        <div class="card mt-5" style="width: 20rem;">
+        <div class="card mt-5" style="width: 26rem;">
             <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'public/images/errore.jpg'"
                 class="card-img-top" :alt="item.title">
             <div class="card-body ">

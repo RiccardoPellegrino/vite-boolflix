@@ -1,6 +1,7 @@
 <template>
   <header>
     <HeaderComponent />
+    <JumboComponent />
   </header>
 
   <main>
@@ -15,9 +16,11 @@ import axios from 'axios';
 import { store } from './store';
 import HeaderComponent from './components/HeaderComponent.vue';
 import ListCardComponent from './components/ListCardComponent.vue';
+import JumboComponent from './components/JumboComponent.vue'
 
 export default {
   components: {
+    JumboComponent,
     HeaderComponent,
     ListCardComponent
   },
