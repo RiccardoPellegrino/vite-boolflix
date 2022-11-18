@@ -1,7 +1,7 @@
 <template>
     <div class="contenitore">
         <div class="card mt-5" style="width: 20rem;">
-            <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'https://via.placeholder.com/342x500'"
+            <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'public/images/errore.jpg'"
                 class="card-img-top" :alt="item.title">
             <div class="card-body ">
                 <h5 class="card-title text-white">{{ item.original_title || item.original_name }}</h5>
