@@ -57,7 +57,7 @@ export default {
         store.tv = res.data.results;
       })
     },
-    // getMoviePopular() {
+    // getMovieTreading() {
     //   const apiUrl = store.baseURL + store.endPointMovie;
     //   const params = store.params;
     //   axios.get(apiUrl, { params }).then((res) => {
@@ -65,7 +65,7 @@ export default {
     //     store.movie = res.data.results;
     //   })
     // },
-    // getSeriesTvPopular() {
+    // getSeriesTvTreading() {
     //   const apiUrl = store.baseURL + store.endPointTv;
     //   const params = store.params;
     //   axios.get(apiUrl, { params }).then((res) => {
@@ -74,9 +74,12 @@ export default {
     //   })
     // }
   },
-  created() {
 
-  }
+
+  // created() {
+  //   this.getMovieTreading();
+  //   this.getSeriesTvTreading();
+  // }
 }
 </script>
 

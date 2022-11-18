@@ -33,6 +33,11 @@ export default {
     border-color: rgb(220, 56, 69);
     background-color: rgb(53, 53, 53);
     border-radius: 20px;
+
+    &:focus-visible {
+        outline: none;
+        border-color: red !important;
+    }
 }
 
 button {

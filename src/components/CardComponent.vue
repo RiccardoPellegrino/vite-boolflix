@@ -1,14 +1,17 @@
 <template>
-    <div class="card mt-5" style="width: 20rem;">
-        <img :src="imgPath + item.backdrop_path" class="card-img-top" :alt="item.title">
-        <div class="card-body">
-            <h5 class="card-title text-white">{{ item.original_title || item.original_name }}</h5>
-            <p class="card-text text-white">{{ item.title || item.name }}</p>
-            <p class="text-white">{{ item.vote_average }}</p>
-            <div class="flag" v-if="flag.includes(item.original_language)">
-                <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
+    <div class="contenitore">
+        <div class="card mt-5" style="width: 20rem;">
+            <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'https://via.placeholder.com/342x500'"
+                class="card-img-top" :alt="item.title">
+            <div class="card-body ">
+                <h5 class="card-title text-white">{{ item.original_title || item.original_name }}</h5>
+                <p class="card-text text-white ">{{ item.title || item.name }}</p>
+                <p class="text-white ">{{ item.vote_average }}</p>
+                <div class="flag" v-if="flag.includes(item.original_language)">
+                    <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
+                </div>
+                <div v-else>{{ item.original_language }}</div>
             </div>
-            <div v-else>{{ item.original_language }}</div>
         </div>
     </div>
 </template>
@@ -33,6 +36,10 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 
+.hide {
+    display: none;
+}
+
 .flag {
     width: 30px;
 
@@ -49,9 +56,31 @@ export default {
 
 }
 
+.contenitore {
+    transition: 1s;
+    cursor: pointer;
+
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 .card-img-top {
+    position: relative;
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+.card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // display: none;
+
+    &:hover {
+        display: block;
+    }
 }
 </style>
