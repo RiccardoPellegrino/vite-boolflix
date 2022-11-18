@@ -5,8 +5,8 @@
   </header>
 
   <main>
-    <ListCardComponent title="Movies" :items="store.movie" />
-    <ListCardComponent title="TV Series" :items="store.tv" />
+    <ListCardComponent title="Movies" id="movie" :items="store.movie" />
+    <ListCardComponent title="TV Series" id="serie" :items="store.tv" />
   </main>
 
 </template>

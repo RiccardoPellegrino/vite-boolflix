@@ -3,8 +3,8 @@
         <a href="#"><img src="public\images\BOOLFLIX.png" alt=""></a>
         <div class="d-flex text-white">
             <a class="nav-link active fs-5 me-5" aria-current="page" href="#">Home</a>
-            <a class="nav-link active fs-5 me-5" aria-current="page" href="#">Movie</a>
-            <a class="nav-link active fs-5 me-5" aria-current="page" href="#">SerieTv</a>
+            <a class="nav-link active fs-5 me-5" aria-current="page" href="#movie">Movie</a>
+            <a class="nav-link active fs-5 me-5" aria-current="page" href="#serie">SerieTv</a>
         </div>
         <SearchComponent />
     </header>
