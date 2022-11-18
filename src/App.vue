@@ -57,29 +57,31 @@ export default {
         store.tv = res.data.results;
       })
     },
-    // getMovieTreading() {
-    //   const apiUrl = store.baseURL + store.endPointMovie;
-    //   const params = store.params;
-    //   axios.get(apiUrl, { params }).then((res) => {
-    //     console.log(res.data.results);
-    //     store.movie = res.data.results;
-    //   })
-    // },
-    // getSeriesTvTreading() {
-    //   const apiUrl = store.baseURL + store.endPointTv;
-    //   const params = store.params;
-    //   axios.get(apiUrl, { params }).then((res) => {
-    //     console.log(res.data.results);
-    //     store.tv = res.data.results;
-    //   })
-    // }
+    getMovieTrending() {
+      const apiUrl = store.baseURL + store.endPointTreadingMovie;
+      const params = store.params;
+      const urlNuovo = apiUrl + params.media_type_movie + params.time_window
+      axios.get(urlNuovo, { params }).then((res) => {
+        console.log(res.data.results);
+        store.movie = res.data.results;
+      })
+    },
+    getSeriesTvTrending() {
+      const apiUrl = store.baseURL + store.endPointTreadingSeries;
+      const params = store.params;
+      const urlNuovo = apiUrl + params.media_type + params.time_window
+      axios.get(urlNuovo, { params }).then((res) => {
+        console.log(res.data.results);
+        store.tv = res.data.results;
+      })
+    }
   },
 
 
-  // created() {
-  //   this.getMovieTreading();
-  //   this.getSeriesTvTreading();
-  // }
+  created() {
+    this.getMovieTrending();
+    this.getSeriesTvTrending();
+  }
 }
 </script>
 

@@ -4,7 +4,7 @@ $fa-font-path: '../webfonts';
 
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
-
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
 @import 'bootstrap/scss/bootstrap';
 
 body {
@@ -32,4 +32,8 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(220, 53, 69, 1);
+}
+
+.fa-star {
+    color: yellow
 }

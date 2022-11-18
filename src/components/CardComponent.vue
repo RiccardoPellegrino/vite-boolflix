@@ -6,6 +6,9 @@
             <div class="card-body ">
                 <h5 class="card-title text-white">{{ item.original_title || item.original_name }}</h5>
                 <p class="card-text text-white ">{{ item.title || item.name }}</p>
+
+                <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span>
+
                 <p class="text-white ">{{ item.vote_average }}</p>
                 <div class="flag" v-if="flag.includes(item.original_language)">
                     <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
@@ -17,6 +20,8 @@
 </template>
 
 <script>
+import { computed } from '@vue/reactivity';
+
 
 export default {
     props: {
@@ -28,6 +33,11 @@ export default {
                 'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr'
             ],
             imgPath: 'https://image.tmdb.org/t/p/w342'
+        }
+    },
+    computed: {
+        star() {
+            return Math.ceil(this.item.vote_average / 2)
         }
     }
 }
