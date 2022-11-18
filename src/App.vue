@@ -37,6 +37,9 @@ export default {
 
     }
   },
+  computed: {
+
+  },
   methods: {
     getMovie() {
       const apiUrl = store.baseURL + store.endPointMovie;

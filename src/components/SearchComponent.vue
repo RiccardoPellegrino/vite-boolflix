@@ -2,10 +2,10 @@
     <form class="d-flex justify-content-center align-items-center" @submit.prevent="doSearch">
         <div>
             <label class="visually-hidden" for="">Search Title</label>
-            <input type="text" class="me-1" id="" placeholder="Search Title" v-model.trim="text">
+            <input type="text" class="me-1 text-white" id="input" placeholder="Search Title" v-model.trim="text">
         </div>
         <div>
-            <button type="submit" class="btn btn-danger me-3">Search</button>
+            <button type="submit" class="btn me-3"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </form>
 </template>
@@ -29,5 +29,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#input {
+    border-color: rgb(220, 56, 69);
+    background-color: rgb(53, 53, 53);
+    border-radius: 20px;
+}
 
+button {
+    // background-color: rgb(53, 53, 53);
+    color: rgb(220, 56, 69);
+}
 </style>
