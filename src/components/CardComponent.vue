@@ -1,6 +1,6 @@
 <template>
-    <div class="contenitore">
-        <div class="card mt-5" style="width: 26rem;">
+    <div class="contenitore mt-5">
+        <div class="card " style="width: 90%;">
             <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'public/images/errore.jpg'"
                 class="card-img-top" :alt="item.title">
             <div class="card-body ">
@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             flag: [
-                'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr', 'nl', 'xx', 'ml', 'cn', 'ko'
+                'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr', 'nl', 'xx', 'ml', 'cn', 'ko', 'ar', 'pt', 'br', 'tl', 'sv', 'da', 'sh'
             ],
             imgPath: 'https://image.tmdb.org/t/p/w342'
         }
@@ -62,8 +62,8 @@ export default {
 .card {
     background-color: $bg-color;
     color: black;
-    margin-left: 50px;
-
+    position: relative;
+    overflow: auto;
 }
 
 .contenitore {
@@ -77,7 +77,6 @@ export default {
 }
 
 .card-img-top {
-    position: relative;
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -87,7 +86,6 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    // display: none;
 
     &:hover {
         display: block;
