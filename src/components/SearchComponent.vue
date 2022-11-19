@@ -5,7 +5,7 @@
             <input type="text" class="me-1 text-white" id="input" placeholder="Search Title" v-model.trim="text">
         </div>
         <div>
-            <button type="submit" class="btn me-3"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button type="submit" class="btn me-3"><i class="fa-solid fa-magnifying-glass fs-5"></i></button>
         </div>
     </form>
 </template>
@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 #input {
     border-color: rgb(220, 56, 69);
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(0, 0, 0);
     border-radius: 20px;
 
     &:focus-visible {

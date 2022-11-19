@@ -28,6 +28,11 @@ export default {
 header {
     height: 80px;
     border-bottom: 2px solid rgb(220, 53, 69);
+    background: rgb(231, 2, 2);
+    background: -moz-radial-gradient(circle, rgba(231, 2, 2, 1) 0%, rgba(0, 0, 0, 1) 68%);
+    background: -webkit-radial-gradient(circle, rgba(231, 2, 2, 1) 0%, rgba(0, 0, 0, 1) 68%);
+    background: radial-gradient(vertical, rgba(231, 2, 2, 1) 0%, rgba(0, 0, 0, 1) 68%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e70202", endColorstr="#000000", GradientType=1);
 }
 
 a:hover {

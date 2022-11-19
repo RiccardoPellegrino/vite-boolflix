@@ -4,7 +4,7 @@
         <h2 class="mt-4"><i class="fa-solid fa-chevron-left arrow-left" @click="scrollLeft()"></i>{{ title }}<i
                 class="fa-solid fa-chevron-right arrow-right" @click="scrollRight()"></i></h2>
 
-        <div class="row" ref="cards">
+        <div class="row ps-5" ref="cards">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" v-for="(item, index) in items" :key="item.id">
                 <CardComponent :item="item" />
             </div>
