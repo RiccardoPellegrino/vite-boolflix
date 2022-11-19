@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             flag: [
-                'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr'
+                'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr', 'nl', 'xx', 'ml', 'cn', 'ko'
             ],
             imgPath: 'https://image.tmdb.org/t/p/w342'
         }
