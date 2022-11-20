@@ -22,7 +22,7 @@ export default {
   components: {
     JumboComponent,
     HeaderComponent,
-    ListCardComponent
+    ListCardComponent,
   },
   data() {
     return {
