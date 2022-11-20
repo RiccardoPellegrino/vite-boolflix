@@ -1,19 +1,24 @@
 <template>
     <div class="contenitore mt-5">
-        <div class="card " style="width: 90%;">
+        <div class="card" @mouseover="show = true" @mouseleave="show = false">
             <img :src="item.backdrop_path ? imgPath + item.backdrop_path : 'public/images/errore.jpg'"
                 class="card-img-top" :alt="item.title">
-            <div class="card-body ">
-                <h5 class="card-title text-white">{{ item.original_title || item.original_name }}</h5>
-                <p class="card-text text-white ">{{ item.title || item.name }}</p>
+            <div class="card-body">
+                <h5 class="card-title ">{{ item.original_title || item.original_name }}</h5>
+                <div v-show="show">
+                    <p class="card-text ">{{ item.title || item.name }}</p>
 
-                <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span>
+                    <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span>
 
-                <p class="text-white ">{{ item.vote_average }}</p>
-                <div class="flag" v-if="flag.includes(item.original_language)">
-                    <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
+                    <p>{{ item.vote_average }}</p>
+                    <div class="flag" v-if="flag.includes(item.original_language)">
+                        <img :src="'/images/' + item.original_language + '.png'" :alt="item.original_language + 'Flag'">
+                    </div>
+                    <div v-else>{{ item.original_language }}</div>
+                    <div>
+                        {{ item.overview }}
+                    </div>
                 </div>
-                <div v-else>{{ item.original_language }}</div>
             </div>
         </div>
     </div>
@@ -32,7 +37,8 @@ export default {
             flag: [
                 'en', 'it', 'us', 'de', 'ja', 'es', 'ir', 'fr', 'nl', 'xx', 'ml', 'cn', 'ko', 'ar', 'pt', 'br', 'tl', 'sv', 'da', 'sh'
             ],
-            imgPath: 'https://image.tmdb.org/t/p/w342'
+            imgPath: 'https://image.tmdb.org/t/p/w342',
+            show: false
         }
     },
     computed: {
@@ -63,8 +69,15 @@ export default {
     background-color: $bg-color;
     color: black;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
+
 }
+
+// .card-title {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+// }
 
 .contenitore {
     transition: 1s;
@@ -72,7 +85,7 @@ export default {
 
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
 
@@ -86,6 +99,10 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: white;
 
     &:hover {
         display: block;

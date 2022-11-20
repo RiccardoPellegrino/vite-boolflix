@@ -5,7 +5,7 @@
                 class="fa-solid fa-chevron-right arrow-right" @click="scrollRight()"></i></h2>
 
         <div class="row ps-5" ref="cards">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" v-for="(item, index) in items" :key="item.id">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="(item, index) in items" :key="item.id">
                 <CardComponent :item="item" />
             </div>
 
@@ -52,6 +52,10 @@ section {
         flex-wrap: nowrap;
         overflow: auto;
         height: 330px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 </style>
