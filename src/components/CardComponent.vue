@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { computed } from '@vue/reactivity';
+
 
 
 export default {
@@ -45,7 +45,8 @@ export default {
         star() {
             return Math.ceil(this.item.vote_average / 2)
         }
-    }
+    },
+
 }
 </script>
 
@@ -73,12 +74,6 @@ export default {
 
 }
 
-// .card-title {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-// }
-
 .contenitore {
     transition: 1s;
     cursor: pointer;
@@ -104,8 +99,10 @@ export default {
     overflow: auto;
     color: white;
 
+
     &:hover {
         display: block;
+        background: linear-gradient(180deg, rgba(207, 207, 207, 0) 1%, rgba(0, 0, 0, 1) 80%);
     }
 }
 </style>

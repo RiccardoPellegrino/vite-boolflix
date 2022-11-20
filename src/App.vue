@@ -34,6 +34,7 @@ export default {
       if (newVal !== oldVal) {
         this.getMovie();
         this.getSeries();
+
       }
       console.log('new valore ' + newVal)
       console.log('old valore ' + oldVal)
@@ -85,6 +86,8 @@ export default {
     this.getMovieTrending();
     this.getSeriesTvTrending();
   }
+
+
 }
 </script>
 

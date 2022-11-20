@@ -15,7 +15,7 @@
 
 <script>
 import CardComponent from './CardComponent.vue';
-
+import { store } from '../store'
 export default {
     name: "ListCardComponent",
     props: {
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-
+            store,
         };
     },
     components: {
@@ -40,7 +40,14 @@ export default {
             const element = this.$refs.cards;
             element.scrollBy({ left: 1000, behavior: "smooth", });
         }
+    },
+    updated() {
+        if (store.params.query) {
+            this.$refs.cards.scrollIntoView({ behavior: 'smooth' })
+        }
+
     }
+
 }
 </script>
 
