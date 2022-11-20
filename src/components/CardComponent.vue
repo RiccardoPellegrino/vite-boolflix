@@ -67,21 +67,21 @@ export default {
 }
 
 .card {
+    transition: 1s;
     background-color: $bg-color;
     color: black;
     position: relative;
     overflow: hidden;
 
+    &:hover {
+        transform: scale(1.1);
+        z-index: 1000;
+    }
 }
 
 .contenitore {
-    transition: 1s;
+
     cursor: pointer;
-
-
-    &:hover {
-        transform: scale(1.1);
-    }
 }
 
 .card-img-top {
